@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- This is necessary to use Thymeleaf in the templates -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Demo</title>
+</head>
+<body>
+    <!--
+        In this way we can show the data from the
+        Controller inside the Thymeleaf template.
+
+
+    -->
+    <p th:text="'Time on the server is ' + ${theDate}"/>
+</body>
+</html>
