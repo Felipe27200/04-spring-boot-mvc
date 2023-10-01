@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- This is necessary to use Thymeleaf in the templates -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Hello World </title>
+</head>
+<body>
+    <!-- Use a route defined in the controller -->
+  <form th:action="@{/process-form}" method="GET">
+    <input type="text" name="student_name" placeholder="What's your name?" />
+    <input value="Submit" type="submit"/>
+  </form>
+</body>
+</html>

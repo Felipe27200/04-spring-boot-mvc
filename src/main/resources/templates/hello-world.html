@@ -7,15 +7,20 @@
 
     <!-- References the CSS files -->
     <!-- The @ references to the root of the app -->
-    <link rel="stylesheet" th:href="@{/css/demo.css}" />
 </head>
 <body>
+    Hello World of Spring
+    <br><br>
+
     <!--
-        In this way we can show the data from the
-        Controller inside the Thymeleaf template.
+      In this way we get the value of the input in the form
+      we recognize it based on the name of that input.
 
-
+      And because send the submit form in a GET request,
+      so we take the value of that field in these view,
+      Thanks to the action attribute of </form>
     -->
-    <p th:text="'Time on the server is ' + ${theDate}" class="funny"/>
+    Student name: <span th:text="${param.student_name}" />
+
 </body>
 </html>
