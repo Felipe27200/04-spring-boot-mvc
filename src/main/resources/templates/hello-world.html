@@ -21,6 +21,15 @@
       Thanks to the action attribute of </form>
     -->
     Student name: <span th:text="${param.student_name}" />
+    <br><br>
 
+    <!--
+    This access the information with set to the model
+    in the controller method "letsShoutDude()" of
+    HelloWorldController.
+
+    That method point to this view.
+    -->
+    The message: <span th:text="${message}"/>
 </body>
 </html>

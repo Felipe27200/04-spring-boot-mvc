@@ -6,8 +6,13 @@
     <title>Form Hello World </title>
 </head>
 <body>
-    <!-- Use a route defined in the controller -->
-  <form th:action="@{/process-form}" method="GET">
+    <!--
+        Use a route defined in the controller.
+
+        Now it is pointing to the view that handle
+        the model.
+     -->
+  <form th:action="@{/process-form-v2}" method="GET">
     <input type="text" name="student_name" placeholder="What's your name?" />
     <input value="Submit" type="submit"/>
   </form>
