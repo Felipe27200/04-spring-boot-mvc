@@ -4,6 +4,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller // Mark the class as Spring MVC Controller
 public class HelloWorldController
@@ -33,18 +34,19 @@ public class HelloWorldController
     * is the container for that data of the FormData.
     * */
     @RequestMapping("process-form-v2")
-    public String letsShoutDude(HttpServletRequest request, Model model)
+    /*
+    * @RequestParam() let get the request parameter inside its () and assign
+    * to the parameter in the right, in this case the String name.
+    * */
+    public String letsShoutDude(@RequestParam("student_name") String name, Model model)
     {
-        // 1. Read the request parameter from the HTML form
-        String name = request.getParameter("student_name");
-
-        // 2. Convert the data to all caps
+        // 1. Convert the data to all caps
         name = name.toUpperCase();
 
-        // 3. Create the message
+        // 2. Create the message
         String message = "Yo! " + name;
 
-        // 4. Add the message to the model
+        // 3. Add the message to the model
         model.addAttribute("message", message);
 
         return "hello-world";
