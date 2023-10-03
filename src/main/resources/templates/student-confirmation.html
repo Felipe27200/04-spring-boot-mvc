@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Registration Form</title>
+</head>
+<body>
+  <h3>Student Confirmation</h3>
+
+  <!--
+  So, in this way the layout access to the model attribute
+  and make use of its methods.
+  -->
+  The student is confirmed: <span th:text="${student.getFirstName()} + ' ' + ${student.getLastName()}" />
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+</head>
+<body>
+  <h3>Student Registration Form</h3>
+  <!--
+  In the th:object we must define the
+  name of the model attribute set in the controller
+  it has to be the same.
+
+  When the form is loaded Spring MVC will read the student
+  from the model.
+  -->
+  <form th:action="@{/process-student-form}" th:object="${student}" method="POST">
+    <label>First Name: </label>
+
+    <!--
+      Here we bind the model property firstName
+      with the input in the form.
+
+      The use of *{} is a shorthand for
+      ${student.firstName}.
+
+      After the student was read, it calls student.getFirstName();
+    -->
+    <input type="text" th:field="*{firstName}" />
+
+    <br><br>
+
+    <label for="">Last Name:</label>
+    <input type="text" th:field="*{lastName}" />
+
+    <br><br>
+
+    <!--
+     When the form is submitted Spring MVC will
+     create a new Student instance and add to
+     the model, then call the methods:
+       - student.setFirstName()
+       - student.setLastName()
+     -->
+    <input type="submit" value="Send Data">
+  </form>
+</body>
+</html>
