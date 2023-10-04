@@ -44,6 +44,33 @@
     </select>
 
     <br><br>
+
+    <label>Favorite Programming Language:</label>
+    <input
+      type="radio"
+      th:field="*{favoriteLanguage}"
+      th:each="language : ${languages}"
+      th:value="${language}"
+      th:text="${language}"
+    />
+    
+    <!-- The th:field is the statement that bind the data
+     in the view with data in the model -->
+<!--    <input type="radio" th:field="*{favoriteLanguage}" th:value="Go" /> Go
+    <input type="radio" th:field="*{favoriteLanguage}" th:value="Java" /> Java
+    <input type="radio" th:field="*{favoriteLanguage}" th:value="Python" /> Python
+    <input type="radio" th:field="*{favoriteLanguage}" th:value="PHP" /> PHP-->
+    <br><br>
+
+    <label>Favorite Operating Systems:</label>
+    <input type="checkbox" th:field="*{favoriteSystems}" th:value="Linux">Linux
+    <input type="checkbox" th:field="*{favoriteSystems}" th:value="mcOS">mcOS
+    <!--
+      When the text inside th:any has spaces it must have surrounded by ''
+    -->
+    <input type="checkbox" th:field="*{favoriteSystems}" th:value="'Microsoft Windows'">Microsoft Windows
+
+    <br><br>
     <!--
      When the form is submitted Spring MVC will
      create a new Student instance and add to

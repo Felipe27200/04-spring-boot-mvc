@@ -31,6 +31,8 @@ public class StudentController
     * */
     @Value("${countries}")
     private List<String> countries;
+    @Value("${languages}")
+    private List<String> languages;
 
     @GetMapping("/show-student-form")
     public String showForm(Model model)
@@ -46,6 +48,7 @@ public class StudentController
         * */
         model.addAttribute("student", student);
         model.addAttribute("countries", this.countries); // Make available to the view
+        model.addAttribute("languages", this.languages); // Make available to the view
 
         return "student-form";
     }

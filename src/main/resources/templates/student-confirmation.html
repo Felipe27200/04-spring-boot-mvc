@@ -15,5 +15,22 @@
   <br><br>
 
   Country: <span th:text="${student.getCountry()}"/>
+  <br><br>
+
+  Favorite Programming Language: <span th:text="${student.getFavoriteLanguage()}"/>
+  <br><br>
+
+  <!--
+    We can use the methods defined by the object model students
+    or access the attributes of the model directly like in this case.
+  -->
+  Favorite Operating Systems: <span th:text="${student.favoriteSystems}"/>
+
+  <!--
+    Loop the elements inside the model attribute
+  -->
+  <ul>
+     <li th:each="system : ${student.favoriteSystems}" th:text="${system}"></li>
+  </ul>
 </body>
 </html>
