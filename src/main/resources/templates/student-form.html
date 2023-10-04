@@ -63,12 +63,20 @@
     <br><br>
 
     <label>Favorite Operating Systems:</label>
-    <input type="checkbox" th:field="*{favoriteSystems}" th:value="Linux">Linux
-    <input type="checkbox" th:field="*{favoriteSystems}" th:value="mcOS">mcOS
+    <!--<input type="checkbox" th:field="*{favoriteSystems}" th:value="Linux">Linux
+    <input type="checkbox" th:field="*{favoriteSystems}" th:value="mcOS">mcOS-->
     <!--
       When the text inside th:any has spaces it must have surrounded by ''
     -->
-    <input type="checkbox" th:field="*{favoriteSystems}" th:value="'Microsoft Windows'">Microsoft Windows
+    <!--<input type="checkbox" th:field="*{favoriteSystems}" th:value="'Microsoft Windows'">Microsoft Windows-->
+
+    <input
+      type="checkbox"
+      th:field="*{favoriteSystems}"
+      th:each="system : ${systems}"
+      th:value="${system}"
+      th:text="${system}"
+    />
 
     <br><br>
     <!--
