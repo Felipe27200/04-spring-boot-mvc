@@ -30,17 +30,17 @@
 
     <br><br>
 
-    <label for="">Last Name:</label>
+    <label >Last Name:</label>
     <input type="text" th:field="*{lastName}" />
 
     <br><br>
 
     <select th:field="*{country}">
-      <option th:value="Brazil">Brazil</option>
-      <option th:value="Colombia">Colombia</option>
-      <option th:value="France">France</option>
-      <option th:value="India">India</option>
-      <option th:value="Germany">Germany</option>
+      <!--
+        We define a for each loop inside th:each, then we get the value
+        of each one element and use it for the value and the text of the </option>
+      -->
+      <option th:each="tempCountries : ${countries}" th:value="${tempCountries}" th:text="${tempCountries}"/>
     </select>
 
     <br><br>

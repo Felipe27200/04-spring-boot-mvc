@@ -13,7 +13,6 @@ public class Student {
     private String lastName;
     private String country;
 
-
     public String getCountry() {
         return country;
     }
